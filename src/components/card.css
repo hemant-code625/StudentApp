@@ -3,7 +3,8 @@
     border: 2px solid white;
     border-radius: 38px;
     width: 225px;
-    height: 368px;
+    height: 380px;
+    /* height: auto; */
     display: inline-block;
     overflow: hidden;
     padding: 6px;

@@ -2,11 +2,28 @@ import { useState } from 'react'
 import './index.css'
 import stdData from '../studentAPI'
 import Card from '../card'
+import NavItem from './NavItem'
+
+const uniqueList = ["Home",
+    ...new Set(
+        stdData.map((currElement)=>{
+    return currElement.category;
+    }))];
+
+
+// console.log(uniqueList)
 
 
 const Navbar = () => {
+    
     const [Info, setInfo] = useState(stdData);
+    const [NavList, setNavList] = useState(uniqueList);
+
     const filter=(category)=>{
+        if(category === "Home"){
+            setInfo(stdData);
+            return;
+        }
         const updatedList = stdData.filter((currElement)=>{
             return currElement.category === category;
         })
@@ -14,16 +31,7 @@ const Navbar = () => {
     }
     return (
         <>
-        <div className='container'>
-            <ul class="navbar">
-                <li><a href="#" onClick={()=> setInfo(stdData)}>Home</a></li>
-                <li><a href="#" onClick={()=>filter("Studious")}>Studious</a></li>
-                <li><a href="#" onClick={()=>filter("GymRat")}>GymRat</a></li>
-                <li><a href="#" onClick={()=>filter("Gangster")}>Gangster</a></li>
-                <li><a href="#" onClick={()=>filter("Notorious")}>Notorious</a></li>
-                
-            </ul>
-            </div>
+            <NavItem filter = {filter} NavList = {NavList} />
             <Card setData={Info}/>
         </>
     )
