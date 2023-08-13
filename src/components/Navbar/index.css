@@ -1,12 +1,10 @@
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin:16px;
 }
-li:hover{
-    text-decoration: solid; 
-    /* font-size: larger; */
-}
+
 ul.navbar {
     list-style-type: none;
     margin: 0;

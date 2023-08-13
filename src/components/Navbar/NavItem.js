@@ -8,7 +8,7 @@ const NavItem = ({filter, NavList}) => {
             <ul class="navbar">
             {NavList.map((currElement)=>{
             return(
-                <li><a href="#" onClick={()=>filter(currElement)}>{currElement}</a></li>
+                <li><a href=" #" onClick={()=>filter(currElement)} key={currElement._id}>{currElement}</a></li>
             )
             })}    
             </ul>
