@@ -40,7 +40,7 @@ const stdData =[
         "contact": " sasfkjwelmen@sample.com"
     },
     {
-        "id": 6,
+        "id": 7,
         "profile": "images/ey1.jpg",
         "name": "Elvish Yadhav",
         "category": "Gangster",
